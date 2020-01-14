@@ -28,20 +28,20 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false|
+|nickname|string|null: false, index: true|
 |email|string|null: false|
 |password|string|null: false|
 ### Association
 - has_many :messages
-- has_many :groups
+- has_many :groups, through :
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
 |image|string||
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
@@ -49,10 +49,16 @@ Things you may want to cover:
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group|text||
-|user_id|integer|null: false, foreign_key: true|
+|name|text||
 ### Association
-- has_many :users
+- has_many :users, through :
 - has_many :messages
 
-
+## user_groupテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :group

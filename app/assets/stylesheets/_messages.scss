@@ -117,6 +117,20 @@
   &__message-form{
     background-color: #d2d2d2;
     height: 90px;
+    padding: 0 40px;
+    &__new-message{
+      line-height: 50px;
+      &__input-box{
+        display: flex;
+        &__text{
+          
+        }
+        &__image{
+        }
+      }
+      &__submit-btn{
+      }
+    }
   }
 }
 

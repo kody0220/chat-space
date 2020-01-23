@@ -18,15 +18,16 @@
     &__box{
       height: 20px;
       width: 100%;
-      background-color: #333333;
       margin: 0 20px;
       display: flex;
       justify-content: space-between;
       font-weight: bold;
+      color: #ffffff;
       &__name{
       }
       &__icon{
         width: 60px;
+        text-align: right;
       }
     } 
   }
@@ -34,6 +35,12 @@
     height: calc(100vh - 100px);
     background-color: #2f3e51;
   }
+}
+
+.group-create,.edit-account{
+  padding-left: 5px;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .main-chat {

@@ -29,9 +29,9 @@
     .main-chat__message-form__new-message
       .main-chat__message-form__new-message__input-box
         %input.main-chat__message-form__new-message__input-box__text{:placeholder => "type a message", :type => "text"}
-        .main-chat__message-form__new-message__input-box__image
-          = link_to "#", class: "input-image" do
-            %i.far.fa-image
+        %label.main-chat__message-form__new-message__input-box__image
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box"}
       .main-chat__message-form__new-message__submit-btn
         =link_to "#", class: "send-message" do
           Send
